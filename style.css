@@ -1,0 +1,188 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(0, 0%, 95%);
+    position: relative;
+    font-family: Arial, sans-serif;
+    transition: 2s;
+}
+
+.theme-switch-wrapper {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: hsl(220, 15%, 25%);
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: '🌙';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 26px;
+    font-size: 18px;
+}
+
+input:checked + .slider {
+    background-color: hsl(220, 15%, 45%);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+    content: '🌞'; /* Sun emoji for checked state */
+}
+
+body.dark {
+    background-color: hsl(0, 0%, 10%);
+    color: white;
+}
+
+body.dark #calculator {
+    background-color: hsl(0, 0%, 20%);
+}
+
+body.dark #display {
+    background-color: hsl(0, 0%, 25%);
+    color: white;
+}
+
+body.dark button {
+    background-color: hsl(0, 0%, 40%);
+}
+
+body.dark button:hover {
+    background-color: hsl(0, 0%, 50%);
+}
+
+body.dark button:active {
+    background-color: hsl(0, 0%, 60%);
+}
+
+body.dark .button-operator {
+    background-color: hsl(35, 100%, 45%);
+}
+
+body.dark .button-operator:hover {
+    background-color: hsl(35, 100%, 55%);
+}
+
+body.dark .button-operator:active {
+    background-color: hsl(35, 100%, 65%);
+}
+
+#calculator {
+    background-color: hsl(0, 0%, 15%);
+    border-radius: 15px;
+    max-width: 500px;
+    overflow: hidden;
+}
+
+#display {
+    padding: 20px;
+    font-size: 5rem;
+    width: 100%;
+    text-align: left;
+    background-color: hsl(0, 0%, 20%);
+    border: none;
+    color: white;
+}
+
+#keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 25px;
+}
+
+.space {
+    font-size: 40px;
+}
+
+button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    background-color: hsl(0, 0%, 30%);
+    border: none;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.6), /* White shadow */
+                0 4px 6px rgba(0, 0, 0, 0.1), 
+                0 6px 10px rgba(0, 0, 0, 0.15); /* Black shadows */
+}
+
+button:hover {
+    background-color: hsl(0, 0%, 40%);
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(255, 255, 255, 0.6), /* White shadow */
+                0 6px 8px rgba(0, 0, 0, 0.15), 
+                0 8px 14px rgba(0, 0, 0, 0.2); /* Black shadows */
+}
+
+button:active {
+    background-color: hsl(0, 0%, 50%);
+    transform: scale(0.95); 
+    box-shadow: 0 3px 5px rgba(255, 255, 255, 0.6), /* White shadow */
+                0 3px 5px rgba(0, 0, 0, 0.1), 
+                0 4px 6px rgba(0, 0, 0, 0.15); /* Black shadows */
+}
+
+.button-operator {
+    background-color: hsl(35, 100%, 55%);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.6), /* White shadow */
+                0 4px 6px rgba(0, 0, 0, 0.1), 
+                0 6px 10px rgba(0, 0, 0, 0.15); /* Black shadows */
+}
+
+.button-operator:hover {
+    background-color: hsl(35, 100%, 65%);
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(255, 255, 255, 0.6), /* White shadow */
+                0 6px 8px rgba(0, 0, 0, 0.15), 
+                0 8px 14px rgba(0, 0, 0, 0.2); /* Black shadows */
+}
+
+.button-operator:active {
+    background-color: hsl(35, 100%, 75%);
+    transform: scale(0.95); 
+    box-shadow: 0 3px 5px rgba(255, 255, 255, 0.6), /* White shadow */
+                0 3px 5px rgba(0, 0, 0, 0.1), 
+                0 4px 6px rgba(0, 0, 0, 0.15); /* Black shadows */
+}
